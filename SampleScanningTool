@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+
+scanner = nmap.PortScanner()
+
+print ('Welcome to the first port scanning tool for this test')
+print ('<....................................................................>')
+
+
+ip_address = input('Kindly input your IP address: ')
+print ('The IP address you want to scan is: ', ip_address)
+type (ip_address)
+
+
+response = input ('\n Which type of scan do you want to execute:
+                    1. SYN ACK Scan
+                    2. UDP Scan
+                    3. Comprehensive Scan
+                \n')
+print ('You have selected: ', response)
+
+
+if response = '1':
+    print ('Nmap version: ', scanner.nmap_version())
+    scannner.scan(ip_address, '1-1024', '-v -sS')
+    print (scanner.scaninfo())
+    print ('IP Status: ', scanner[ip_address].state())
+    print (scanner[ip_address].all_protocols())
+    print ('Open ports: ', scanner[ip_address]['tcp'].keys())
+elif response = '2':
+    print ('Nmap version: ', scanner.nmap_version())
+    scanner.scan(ip_address, '1-1024', '-v -sU')
+    print (scanner.scaninfo())
+    print ('IP Status: ', scanner[ip_address].state())
+    print (scanner[ip_address].allprotocols())
+    print ('Open ports: ', scanner[ip_address]['udp'].keys())
+elif response = '3':
+    print ('Nmap Version: ', scanner.nmap_version())
+    scanner.scan(ip_address, '1-1024', '-v -sS -sU -A -0')
+    print (scanner.scaninfo())
+    print ('IP Status: ', scanner[ip_address].state())
+    print (scanner[ip_address].allprotocols())
+    print('open ports: ', scanner[ip_address].keys())
+else response >= '4':
+    print ('Pick a correct option')
+    
+    
