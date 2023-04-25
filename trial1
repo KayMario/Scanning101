@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+
+scanner = nmap.PortScanner()
+
+ip_address = '172.96.178.218'
+type (ip_address)
+    
+scan1 = scannner.scan(ip_address, '443', '-v -sS -A -0')
+print (scanner.scaninfo())
+print ('IP Status: ', scanner[ip_address].state())
+print (scanner[ip_address].all_protocols())
+print ('Open ports: ', scanner[ip_address]['tcp'].keys())
